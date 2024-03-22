@@ -1,17 +1,24 @@
 @extends('layout')
 @section('title', "Home Page")
 @section('content')
- <form action="{{ route('tractor.search') }}" method="post">
+
+<form action="{{ route('tractor.search') }}" method="post">
     @csrf
     <input type="text" name="search" placeholder="Search Tractors"><br>
-    Column: <select name="column">
-	<option value="name">kods</option>
-	<!-- <option value="age">Age</option>
-	<option value="gender">Gender</option> -->
-	</select><br>
+    Tractor Model: 
+    <select name="model">
+        <option value="massey_fergusson">massey_fergusson</option>
+        <option value="case">case</option>
+        <option value="john deere">john deere</option>
+        <option value="new holland">new holland</option>
+        <!-- Add other tractor models as needed -->
+    </select><br>
     <input type="submit">
-    <!-- <button type="submit" name="submit">Search</button> -->
 </form>
+<div class="cart-item">
+   <!-- Your content goes here -->
+</div>
+
 
 
 
@@ -47,5 +54,5 @@
 //     }
 // }
 ?>  -->
-@endsection
 
+@endsection

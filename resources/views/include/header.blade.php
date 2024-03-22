@@ -9,18 +9,22 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('shop.index') }}">Veikals</a>
+        </li>
         @auth
           <li class="nav-item">
-          <a class="nav-link" href="{{route('logout')}}">Logout</a>
+          <a class="nav-link" href="{{route('logout')}}">Iziet</a>
         </li>
         @else
         <li class="nav-item">
-          <a class="nav-link" href="{{route('login')}}">Login</a>
+          <a class="nav-link" href="{{route('login')}}">Pievienoties</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{route('registration')}}">Registration</a>
+          <a class="nav-link" href="{{route('registration')}}">Reģistrācija</a>
         </li>
         @endauth
+       
       </ul>
       <span class="navbar-text">
       @auth

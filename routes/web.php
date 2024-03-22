@@ -1,5 +1,5 @@
 <?php
-// use App\Http\Controllers\TractorController;
+ use App\Http\Controllers\TractorController;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthManager;
@@ -24,11 +24,18 @@ Route::post('/login', [AuthManager::class, 'loginPost'])->name('login.post');
 Route::get('/registration', [AuthManager::class, 'registration'])->name('registration');
 Route::post('/registration', [AuthManager::class, 'registrationPost'])->name('registration.post');
 Route::get('/logout', [AuthManager::class, 'logout'])->name('logout');
-Route::get('/search', [TractorController::class, 'search'])->name('tractor');
-// Route::post('/tractor', [TractorController::class, 'tractor'])->name('tractor');
 
-Route::post('/tractors', 'TractorController@index');
-Route::post('/search', 'TractorController@search')->name('tractor.search');
+// Route::get('/welcome', [TractorController::class], 'welcome')->name('welcome');
+Route::match(['get', 'post'], '/search', [TractorController::class, 'search'])->name('tractor.search');
+
+// Route::get('/shop', 'ShopController@index')->name('shop.index');
+Route::get('/shop', 'App\Http\Controllers\ShopController@index')->name('shop.index');
+
+
+
+
+// Route::post('/tractors', 'TractorController@index');
+// Route::post('/search', 'TractorController@search')->name('tractor.search');
 
 // Route::group(['middleware' => 'auth'], function (){
 //     Route::get('/profile', function (){

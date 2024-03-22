@@ -1,24 +1,21 @@
 <?php
 
-use App\Http\Controllers\TractorController;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    
-    
     /**
      * Run the migrations.
      */
     public function up(): void
     {
-        Schema::create('Massey_Fergusson', function (Blueprint $table) {
+        Schema::create('Tractor_errors', function (Blueprint $table) {
             $table->id();
+            $table->text('marka');
             $table->text('kods');
             $table->longText('apraksts');
-            $table->longText('skaidrojums');
             $table->timestamps();
         });
     }
