@@ -36,10 +36,13 @@ table, th, td {
                 </tr>
                 
             </table>
-                
+            <br>
+                <button>
+                    <a href="">atpakaļ</a>
+                </button>
             @endforeach
         </ul>
     @else
-        <p>No records found.</p>
+        <p>Netika atrasts Jūsu meklētais, mēģiniet vēlreiz</p>
     @endif
 @endsection

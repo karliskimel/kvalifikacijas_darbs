@@ -1,4 +1,6 @@
-import './bootstrap';
+console.log('hello')
+
+// import '../resources/js/bootstrap';
 
 
 let openShopping = document.querySelector('.shopping');
@@ -18,13 +20,13 @@ closeShopping.addEventListener('click', () => {
 });
 
 let products = [
-       {
-        id: 1,
-        name: 'PRODUCT NAME 1',
-        image: '1.PNG',
-        price: 120000
-       },
-       {
+   {
+       id: 1,
+       name: 'PRODUCT NAME 1',
+       image: '1.PNG',
+       price: 120000
+   },
+   {
         id: 2,
         name: 'PRODUCT NAME 2',
         image: '2.PNG',
@@ -53,24 +55,6 @@ let products = [
         name: 'PRODUCT NAME 6',
         image: '6.PNG',
         price: 120000
-       },
-       {
-        id: 7,
-        name: 'PRODUCT NAME 7',
-        image: '7.PNG',
-        price: 123
-       },
-       {
-        id: 8,
-        name: 'PRODUCT NAME 8',
-        image: '8.PNG',
-        price: 129
-       },
-       {
-        id: 9,
-        name: 'PRODUCT NAME 9',
-        image: '9.PNG',
-        price: 120
        },
 ];
 

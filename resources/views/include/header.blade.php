@@ -24,7 +24,6 @@
           <a class="nav-link" href="{{route('registration')}}">Reģistrācija</a>
         </li>
         @endauth
-       
       </ul>
       <span class="navbar-text">
       @auth
@@ -34,3 +33,4 @@
     </div>
   </div>
 </nav>
+<!-- jāpievieno poga atpakaļ uz welcomeblade -->

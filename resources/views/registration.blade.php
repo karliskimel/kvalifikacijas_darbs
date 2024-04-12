@@ -25,7 +25,7 @@
    <form action="{{route('registration.post')}}" method="POST" class="ms-auto me-auto mt-3" style="width: 500px">
    @csrf
   <div class="mb-3">
-    <label class="form-label">Vārds</label>
+    <label class="form-label">Vārds, Uzvārds</label>
     <input type="text" class="form-control" name="name" >
   </div>
   <div class="mb-3">
