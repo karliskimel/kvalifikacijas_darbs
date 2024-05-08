@@ -39,17 +39,35 @@ body{
        row-gap: 20px;
        margin-top: 50px;
    }
-   .card{
+   .card{  /* checkout grozam */
        position: fixed;
-       top: 0;
+       top: 1000;
        left: 100%;
        width: 500px;
        background-color: #453E3B;
        height: 100vh;
        transition: 0.5s;
    }
-   .card h1{
-       color: #E8BC0E;
+/* .card {
+    position: absolute;
+    top: 100%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 1; 
+    transition: transform 0.3s ease; 
+    width: 300px; 
+    padding: 20px; 
+    background-color: white; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+   } */
+
+   .card:hover {
+       transform: scale(1.1); 
+   }
+
+   .card h1{ /* groza virssraksts */
+       color: #eb350c;
        font-weight: 100;
        margin: 0;
        padding: 0 20px;
@@ -57,15 +75,16 @@ body{
        display: flex;
        align-items: center;
    }
-   .card .checkOut{
+   .card .checkOut{ /* ārējais pogas */
        position: absolute;
        bottom: 0;
        width: 100%;
        display: grid;
        grid-template-columns: repeat(2, 1fr);
+       border: 2px solid black;
    }
-   .card .checkOut div{
-       background-color: #E8BC0E;
+    .card .checkOut div{ /* iekšējais */
+       background-color: #eb350c;
        width: 100%;
        height: 70px;
        display: flex;
@@ -73,9 +92,10 @@ body{
        align-items: center;
        font-weight: bold;
        cursor: pointer;
+       border: 2px solid black;
    }
    .card .checkOut div:nth-child(2){
-       background-color: #1C1F25;
+       background-color: #eb350c;
        color: #fff;
    }
    .active .card{
@@ -84,11 +104,11 @@ body{
    .active .container{
        transform: translateX(-200px);
    }
-   .list .item{
+   .list .item{ /*produkta attēla fons #757676 */
        text-align: center;
        background-color: #DCE0E1;
        padding: 20px;
-       box-shadow: 0 50px 50px #757676;
+       box-shadow: 0 50px 50px #F7E7CE;
        letter-spacing: 1px;
    }
    .list .item img{
@@ -101,19 +121,19 @@ body{
        margin: 10px;
    }
    .list .item button{
-       background-color: #1C1F25;
+       background-color: red;
        color: #fff;
        padding: 10px;
        width: 100%;
    }
-   .listCard li{
+   .listCard li{ /* produkti atsevišķi */
        display: grid;
        grid-template-columns: 100px repeat(3, 1fr);
-       color: #fff;
+       color: black;
        row-gap: 10px;
        margin-bottom: 20px;
    }
-   .listCard li div{
+   .listCard li div{ /* iedaļu sadale */
        display: flex;
        justify-content: center;
        align-items: center;
@@ -121,12 +141,31 @@ body{
    .listCard li img{
        width: 90%;
    }
-   .listCard button{
+   .listCard button{ /* pievienot grozam poga */
        width: auto;
-       background-color: #fff5;
+       background-color: #F7E7CE;
        border: none;
    }
    .listCard .count{
        margin: 0 10px;
    }
-   /* todo pievienot vairāk produktus */
+
+   .item {
+    position: relative; 
+   }
+
+   .product-info {
+    display: none;
+    position: absolute;
+    top: calc(0% + 10px); /* Position below the product item */
+    left: 50%; /* Position at the center of the product item */
+    transform: translateX(-50%); /* Center horizontally */
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+   }
+
+   .item.hovered .product-info {
+    display: block;
+   }

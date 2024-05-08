@@ -9,11 +9,12 @@ class TractorController extends Controller
 {
     public function search(Request $request)
     {
+        
         try {
-            $search = $request->input('search');
-            $marka = $request->input('marka');
+            $search = $request->input('search'); 
+            $marka = $request->input('marka'); //parametri priekš meklēšanas
     
-            $query = DB::table('tractor_errors')->where( 'kods', 'like', "%$search%");
+            $query = DB::table('tractor_errors')->where( 'kods', 'like', "%$search%"); //izfiltrē meklēšanans rezultātus par kodu
     
             if ($search) {
                 $query->where(function ($query) use ($search) {
@@ -24,39 +25,18 @@ class TractorController extends Controller
     
             $tractors = $query->get();
     
-            return view('tractor.search', ['tractors' => $tractors]);
-        } catch (\Exception $e) {
-            // Handle the exception gracefully
-            // Log the error or display a friendly error message
-            return response()->view('errors.500', [], 500);
+            return view('tractor.search', ['tractors' => $tractors]); //izvadīts tiks lietotājam
+        } catch (\Exception $e) { 
+            return response()->view('errors.500', [], 500);// ja radīsies kļūda tiks izmesta error lapa
         }
-
-        // $search = $request->input('search');
-    
-        // $tractors = DB::table('tractor_errors')
-        //     ->where('kods', 'like', "%$search%")
-        //     ->get();
-    
-        // return view('tractor.search', ['tractors' => $tractors]);
+        return view('welcome');
+        
     }
 
   
 
-    // public function welcome(Request $request) {
-    //     return view('welcome');
-    // }
+    
 }
 
 
 
-// public function search(Request $request)
-//     {
-//         $search = $request->input('search');
-//         $tractors = DB::table('massey_fergusson', 'case')
-//             ->where('kods', 'like', "%$search%")
-//             ->where('apraksts', 'like', "%$search%")
-//             ->where('skaidrojums', 'like', "%$search%")
-//             ->get();
-
-//         return view('tractor.search', ['tractors' => $tractors]);
-//     }

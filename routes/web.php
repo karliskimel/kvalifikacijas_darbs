@@ -5,16 +5,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthManager;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
 Route::get('/', function () {
     return view('welcome');
@@ -32,5 +22,6 @@ Route::match(['get', 'post'], '/search', [TractorController::class, 'search'])->
 
 Route::get('/shop', 'App\Http\Controllers\ShopController@index')->name('shop.index');
 
+Route::get('/#', [TractorController::class, 'welcome'])->name('welcome');
 
 

@@ -11,19 +11,19 @@ class AuthManager extends Controller
 {
     function login(){
         if (Auth::check()){
-            return redirect(route('home')); 
+            return redirect(route('home')); //pievienošanās funkcija pārbauda vai ir veikta autorizācija
         }
         return view('login');
     }
 
     function registration(){
         if (Auth::check()){
-            return redirect(route('home')); 
+            return redirect(route('home')); // pārbauda vai reģistrācijas autorizācija ir veikta
         }
         return view('registration');
     }
 
-    function loginPost(Request $request){
+    function loginPost(Request $request){ //kad tiek veikta pievienošanās nepieciešams ievadīt tikai e-pastu un paroli
         $request->validate([
             'email' => 'required',
             'password' => 'required'
@@ -33,26 +33,25 @@ class AuthManager extends Controller
         if(Auth::attempt($credentials)){
             return redirect()->intended(route('home'));
         }
-        return redirect(route('login'))->width("error", "Login are not valid");
+        return redirect(route('login'))->width("error", "Pievienojoties kaut kas nogāja greizi");
     }
-    function registrationPost(Request $request){
+    function registrationPost(Request $request){ // pieprasītie dati priekš reģistrācijas
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required'
         ]);
 
-        $data['name'] = $request->name;
+        $data['name'] = $request->name; // tiek pārbaudīts vai tāds lietotājs ar norādītajiem datiem eksistē
         $data['email'] = $request->email;
         $data['password'] = Hash::make($request->password);
         $user = User::create($data);
         if(!$user){
-            return redirect(route('registration'))->width("error", "Registration not valid, try again");
+            return redirect(route('registration'))->width("error", "Reģistrācjia neizdevās, mēģiniet vēlreiz");
         }
         return redirect(route('login'));
     }
-    function logout(){
-        // Session::flush();
+    function logout(){ //iziet no sava izveidotā profila
         Auth::logout();
         return redirect(route('login'));
     }
