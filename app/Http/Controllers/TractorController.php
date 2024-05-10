@@ -17,7 +17,7 @@ class TractorController extends Controller
             $query = DB::table('tractor_errors')->where( 'kods', 'like', "%$search%"); //izfiltrē meklēšanans rezultātus par kodu
     
             if ($search) {
-                $query->where(function ($query) use ($search) {
+                $query->where(function ($query) use ($search) {  //meklē ierakstus datubāzē kods un apraksts
                     $query->where('kods', 'like', "%$search%")
                           ->orWhere('apraksts', 'like', "%$search%");
                 });
@@ -29,7 +29,7 @@ class TractorController extends Controller
         } catch (\Exception $e) { 
             return response()->view('errors.500', [], 500);// ja radīsies kļūda tiks izmesta error lapa
         }
-        return view('welcome');
+        return view('welcome'); 
         
     }
 

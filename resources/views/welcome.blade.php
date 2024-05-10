@@ -2,8 +2,7 @@
 @section('title', "Traktori")
 @section('content')
 <body style="background-color: #C3B091;">
-<!-- #397752 -->
-<!-- #399552 -->
+
 <form action="{{ route('tractor.search') }}" method="post">
     @csrf
     <input style="background-color: #F7E7CE" type="text" name="search" placeholder="Kods"><br>

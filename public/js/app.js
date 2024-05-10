@@ -139,22 +139,21 @@ function initApp(){
         `;
         list.appendChild(newDiv);
 
-        // Add additional information container for each product
-        let infoDiv = document.createElement('div');
+        let infoDiv = document.createElement('div'); // pievieno informāciju par katru produktu
         infoDiv.classList.add('product-info');
         infoDiv.innerHTML = `
            <p>info: ${value.info}</p>
         `;
         newDiv.appendChild(infoDiv);
 
-        // Add event listener to toggle visibility of product-info
-        newDiv.addEventListener('mouseenter', () => {
-            // Hide all product-info elements
+        
+        newDiv.addEventListener('mouseenter', () => {  // produkta redzamība
+        
             document.querySelectorAll('.product-info').forEach(element => {
                 element.style.display = 'none';
             });
-            // Show product-info for the current product
-            infoDiv.style.display = 'block';
+            
+            infoDiv.style.display = 'block';  // informācija par produktu
         });
     })
 
@@ -179,8 +178,8 @@ function reloadCard() {
     let totalPrice = 0;
     for (let key in listCards) {
         if (listCards.hasOwnProperty(key)) {
-            const product = listCards[key];
-            totalPrice += product.price * product.quantity;
+            const product = listCards[key]; //konkrētais produkts
+            totalPrice += product.price * product.quantity; //atjaunina cenu grozā
             count += product.quantity;
 
             let newDiv = document.createElement('li');
@@ -198,7 +197,7 @@ function reloadCard() {
             listCard.appendChild(newDiv);
         }
     }
-    total.innerText = totalPrice.toLocaleString();
+    total.innerText = totalPrice.toLocaleString(); //atjaunina groz informāciju
     quantity.innerText = count;
 }
 

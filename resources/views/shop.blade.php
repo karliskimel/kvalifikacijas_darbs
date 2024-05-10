@@ -10,7 +10,7 @@
             <span class="quantity">0</span> <!-- priekš groza -->
           </div>
        </header>
-       <button style="background-color: red; color: black;">
+       <button style="background-color: #F7E7CE; color: black;">
           <a href="{{route('welcome')}}" class="nav-link">atpakaļ</a> <!-- var doties atpakaļ uz sākumu -->
        </button>
        <div class="list"></div>

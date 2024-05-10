@@ -1,10 +1,4 @@
-<header>
-  <style>
-    .navbar-custom{
-      background-color: #C3B091;
-    }
-  </style>
-</header>
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a style="background-color: #F7E7CE" class="navbar-brand" href="#">{{config('app.name')}}</a>
@@ -34,7 +28,7 @@
       </ul>
       <span class="navbar-text">
       @auth
-        {{auth()->user()->name}}
+         {{auth()->user()->name}} <!-- autentificē lietotāju -->
       @endauth   
       </span>
     </div>

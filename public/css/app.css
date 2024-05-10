@@ -20,7 +20,7 @@ body{
    header .shopping img{
        width: 40px;
    }
-   header .shopping span{
+    header .shopping span{ /* groza augša*/
        background-color: red;
        border-radius: 50%;
        display: flex;
@@ -48,19 +48,7 @@ body{
        height: 100vh;
        transition: 0.5s;
    }
-/* .card {
-    position: absolute;
-    top: 100%; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    z-index: 1; 
-    transition: transform 0.3s ease; 
-    width: 300px; 
-    padding: 20px; 
-    background-color: white; 
-    border-radius: 10px; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
-   } */
+
 
    .card:hover {
        transform: scale(1.1); 
@@ -120,7 +108,7 @@ body{
    .list .item .price{
        margin: 10px;
    }
-   .list .item button{
+    .list .item button{ /* pievienot grozam */
        background-color: red;
        color: #fff;
        padding: 10px;
@@ -157,9 +145,9 @@ body{
    .product-info {
     display: none;
     position: absolute;
-    top: calc(0% + 10px); /* Position below the product item */
-    left: 50%; /* Position at the center of the product item */
-    transform: translateX(-50%); /* Center horizontally */
+    top: calc(0% + 10px); 
+    left: 50%; 
+    transform: translateX(-50%); 
     background-color: rgba(255, 255, 255, 0.9);
     padding: 10px;
     border-radius: 5px;
@@ -169,3 +157,4 @@ body{
    .item.hovered .product-info {
     display: block;
    }
+
